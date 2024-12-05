@@ -1,4 +1,4 @@
-#Project Description:
+# Project Description:
 
 For the problem: Please create a program that reads the large text file "War and Peace" by Tolstoy and inserts each unique word (without punctuation or numbers) into a persistent red-black tree. After reading and inserting each unique word into the balanced tree, the sorted list of words should be written into a file named "output.txt".
 
@@ -8,7 +8,7 @@ A nice non-functional implementation can be found here: https://github.com/yassi
 
 Create your solution in C++, Haskell, F#, Java, Python, Groovy, Scala, or Lisp using the following steps:
 
-#Steps:
+# Steps:
 1) Include Necessary Headers and Set Up the Main Function:
 - Include headers for file I/O, strings, vectors, and other required data structures.
 - Set up the main function where the program will run.
