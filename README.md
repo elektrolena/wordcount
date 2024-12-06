@@ -1,3 +1,51 @@
+
+# Haskell Wordcount Project
+
+This project implements a Haskell program to process text files, tokenize the words, and use a Red-Black Tree to sort the unique words. It also includes tests to verify the functionality.
+
+## Requirements
+
+- GHC (Glasgow Haskell Compiler)
+- Cabal (Haskell build tool)
+- hspec (for testing)
+
+Ensure that GHC and Cabal are properly installed on your system. You can install them via GHCup:
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+```
+
+## Build the Project
+
+Run the following command to build the project:
+```bash
+cabal build
+```
+
+## Run the Project
+
+To execute the program, run:
+```bash
+cabal run wordcount
+```
+
+By default, the program expects an input file in `app/input/war-and-peace.txt` and outputs the sorted words to `app/output/output.txt`.
+
+## Run the Tests
+
+The project includes tests for key functionalities like file input/output. To run the tests:
+```bash
+cabal test
+```
+
+Make sure all test dependencies are installed, and the test suite should pass without errors.
+
+## Easter Egg
+
+The project includes tests for key functionalities like file input/output. To run the tests:
+```bash
+bash ./easterEgg/tree.sh Tree
+```
+
 # Project Description:
 
 For the problem: Please create a program that reads the large text file "War and Peace" by Tolstoy and inserts each unique word (without punctuation or numbers) into a persistent red-black tree. After reading and inserting each unique word into the balanced tree, the sorted list of words should be written into a file named "output.txt".
