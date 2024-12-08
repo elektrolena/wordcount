@@ -1,7 +1,5 @@
 module FileReader (readFileContent) where
 
-
--- Reads input file and returns text as string
+-- Reads the content of the file as a string
 readFileContent :: FilePath -> IO String
-readFileContent path = do
-  readFile path
+readFileContent path = readFile path

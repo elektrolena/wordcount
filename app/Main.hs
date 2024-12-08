@@ -1,9 +1,13 @@
+{-# LANGUAGE BangPatterns #-}
 module Main where
 
-import System.Directory (getCurrentDirectory, setCurrentDirectory)
+import System.Directory (getCurrentDirectory)
 import System.FilePath ((</>))
+import RBTree (buildTree, inOrderTraversal)
+import Tokenizer (tokenizeText)
 import FileReader (readFileContent)
 import Writer (writeToFile)
+import Util (toUniqueSortedWords)
 
 main :: IO ()
 main = do
@@ -11,11 +15,22 @@ main = do
   let inputFile = currentDir </> "app/input/war-and-peace.txt"
   let outputFile = currentDir </> "app/output/output.txt"
 
-  -- Read input file
-  content <- readFileContent inputFile
+  -- Read file
+  text <- readFileContent inputFile
 
-  -- Tokanize and insert words in tree
-  let sortedWords = ["and", "peace", "tolstoy", "war", "novel", "is", "a", "by"]
+  -- Tokenize the text unto words
+  let wordsList = tokenizeText text
 
-  -- Write Result in output file
+  -- Remove duplicates and sort words --> TODO: is it correct to sort before creating the tree?
+  let uniqueSorted = toUniqueSortedWords wordsList
+
+  -- Create the tree with the sorted words
+  let tree = buildTree uniqueSorted
+
+  -- Traverses the tree in order
+  let sortedWords = inOrderTraversal tree
+
+  -- Writes the sortedWords into the output file
   writeToFile outputFile sortedWords
+
+  -- TODO: when presenting, should we only tun the tests or the program as well? How do we measure the runtime?
