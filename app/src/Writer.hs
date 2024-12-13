@@ -1,5 +1,9 @@
 module Writer (writeToFile) where
 
--- Writes a list of words in a file
+import System.Directory (createDirectoryIfMissing)
+import System.FilePath (takeDirectory)
+
 writeToFile :: FilePath -> [String] -> IO ()
-writeToFile path sortedWords = writeFile path (unlines sortedWords)
+writeToFile path sortedWords = do
+    createDirectoryIfMissing True (takeDirectory path)
+    writeFile path (unlines sortedWords)

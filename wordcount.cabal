@@ -20,8 +20,7 @@ executable wordcount
         Writer,
         FileReader,
         RBTree,
-        Tokenizer,
-        Util
+        Tokenizer
     ghc-options: -O2 -threaded -rtsopts
     build-depends:    
         base ^>=4.17.2.1,
@@ -44,6 +43,6 @@ test-suite wordcount-tests
         parallel ^>=3.2.2.0,
         hspec >=2.11 && <3,
         hspec-discover
-    other-modules:  FileReader, RBTree, Tokenizer, Writer, Util,  
-                    FileReaderSpec, RBTreeSpec, TokenizerSpec, WriterSpec, UtilSpec
+    other-modules:  FileReader, RBTree, Tokenizer, Writer,
+                    FileReaderSpec, RBTreeSpec, TokenizerSpec, WriterSpec
     default-language: Haskell2010
