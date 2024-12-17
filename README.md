@@ -3,6 +3,12 @@
 
 This project implements a Haskell program to process text files, tokenize the words, and use a Red-Black Tree to sort the unique words. It also includes tests to verify the functionality.
 
+# Start the Project
+Run the following script to build, test and run the project:
+```bash
+./run.sh
+```
+
 ## Requirements
 
 - GHC (Glasgow Haskell Compiler)
